@@ -8,4 +8,5 @@ data class User(
         val lastName: String? = null,
         val birthday: Date? = null,
         val email: String? = null,
-        val password: String? = null)
+        val password: String? = null
+)
