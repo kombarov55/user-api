@@ -1,0 +1,8 @@
+save user:
+curl localhost:8080/user -X POST -d '{ "id": "-1", "firstName": "Nikolay", "lastName": "Kombarov", "birthday": "1523998791", "email": "kombarov55@gmail.com", "password": "root"}' -H "Content-type:application/json" | json_pp
+
+get by email:
+curl localhost:8080/user?email=kombarov55@gmail.com | json_pp
+
+delete:
+curl localhost:8080/user -X DELETE -d a633e8a6-e89e-4ca5-ac54-161fc69ab130 | json_pp
