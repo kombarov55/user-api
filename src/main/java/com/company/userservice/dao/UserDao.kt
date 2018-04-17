@@ -1,6 +1,7 @@
 package com.company.userservice.dao
 
 import com.company.userservice.model.User
+import org.apache.commons.codec.digest.DigestUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
@@ -24,7 +25,7 @@ open class UserDao(
                 "lastname" to user.lastName,
                 "birthday" to user.birthday,
                 "email" to user.email,
-                "password" to user.password
+                "password" to DigestUtils.md5Hex(user.password)
         ))
     }
 
@@ -34,7 +35,7 @@ open class UserDao(
 
     fun searchByEmail(email: String) =
             namedParameterJdbcTemplate.query(
-                    "select * from users where upper(email) like || upper(:email) || '%'",
+                    "select * from users where upper(email) like upper(:email) || '%'",
                     mapOf("email" to email),
                     mapper
             )
