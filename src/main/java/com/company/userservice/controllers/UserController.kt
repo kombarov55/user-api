@@ -22,7 +22,6 @@ class UserController(
     @DeleteMapping
     fun deleteUser(@RequestBody id: String): String {
         userDao.delete(id)
-
         return JSONObject()
                 .put("status", "ok")
                 .toString()
