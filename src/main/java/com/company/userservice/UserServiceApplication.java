@@ -22,7 +22,7 @@ public class UserServiceApplication {
 
 	public static void main(String[] args) {
 	    migration();
-		SpringApplication.run(UserServiceApplication.class, args);
+	    SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 	private static void migration() {
