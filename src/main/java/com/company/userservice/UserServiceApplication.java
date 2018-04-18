@@ -29,6 +29,6 @@ public class UserServiceApplication {
 	    Flyway flyway = new Flyway();
 	    flyway.setDataSource("jdbc:h2:file:~/user", "root", "root");
             flyway.migrate();
-    }
+        }
 
 }
