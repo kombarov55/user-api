@@ -12,8 +12,7 @@ import java.util.*
 
 @Component
 open class UserDao(
-        @Autowired private val jdbcTemplate: JdbcTemplate,
-        @Autowired private val namedParameterJdbcTemplate: NamedParameterJdbcTemplate
+        private val namedParameterJdbcTemplate: NamedParameterJdbcTemplate
 ) {
 
     fun save(user: User) {
